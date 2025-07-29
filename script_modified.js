@@ -67,10 +67,9 @@ function startTimer() {
 function showQuestion() {
   locked = false;
   if (current >= questions.length) {
-    finalText.innerText = `수고하셨습니다!
-정답: ${score} / ${questions.length}`;
+    finalText.innerText = `수고하셨습니다!\n정답: ${score} / ${questions.length}`;
     finalModal.classList.remove("hidden");
-    cheerSound?.play().catch(e => console.warn("cheer 사운드 오류", e));
+    cheerSound.play();
     setTimeout(() => {
       window.location.href = "index.html";
     }, 10000);
@@ -98,7 +97,7 @@ function checkAnswer(selected, answer, button) {
 
   if (selected === answer) {
     clearInterval(timerInterval);
-    correctSound?.play().catch(e => console.warn("정답 소리 오류", e));
+    correctSound.play();
     score++;
     resultText.innerText = "정답입니다!";
     resultText.className = "correct";
@@ -109,7 +108,7 @@ function checkAnswer(selected, answer, button) {
       showQuestion();
     }, 1000);
   } else {
-    wrongSound?.play().catch(e => console.warn("오답 소리 오류", e));
+    wrongSound.play();
     resultText.innerText = "오답입니다!";
     resultText.className = "incorrect";
     resultModal.classList.remove("hidden");
@@ -123,5 +122,5 @@ function checkAnswer(selected, answer, button) {
     }, 500);
   }
 }
-fix: audio playback issue
+
 showQuestion();
