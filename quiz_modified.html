@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>퀴즈 진행</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="timer">⏰ 15초 남음</div>
+  <div class="quiz-container">
+    <h2 id="question-number">1 / 5</h2>
+    <div id="question">문제 불러오는 중...</div>
+    <div id="choices"></div>
+  </div>
+
+  <div id="result-modal" class="modal hidden">
+    <p id="result-text">정답입니다!</p>
+  </div>
+
+  <div id="final-modal" class="modal hidden">
+    <p id="final-text">수고하셨습니다!</p>
+  </div>
+
+  <audio id="cheer-sound" src="sounds/cheer.mp3"></audio>
+  <audio id="correct-sound" src="sounds/correct.mp3"></audio>
+  <audio id="wrong-sound" src="sounds/wrong.mp3"></audio>
+
+  <script src="script_modified.js"></script>
+</body>
+</html>

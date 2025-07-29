@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>상식 퀴즈 시작</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="start-screen">
+    <h1>상식 퀴즈</h1>
+    <p>난이도를 선택하세요</p>
+    <button class="btn easy" onclick="startQuiz('easy')">무식</button>
+    <button class="btn normal" onclick="startQuiz('normal')">평범</button>
+    <button class="btn hard" onclick="startQuiz('hard')">박사</button>
+  </div>
+  <script>
+    function startQuiz(difficulty) {
+      localStorage.setItem('difficulty', difficulty);
+      window.location.href = 'quiz.html';
+    }
+  </script>
+</body>
+</html>
